@@ -1,5 +1,7 @@
 import 'package:auth_test/notifiers/auth_notifier.dart';
+import 'package:auth_test/notifiers/regestir_notifier.dart';
 import 'package:auth_test/services/login_serv.dart';
+import 'package:auth_test/services/regestir_serv.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,7 +21,19 @@ final servLoginProvider = Provider<LoginServ>((ref) {
   return LoginServ(dio);
 });
 
-final authNotifierProvider =
-    AsyncNotifierProvider<AuthNotifier, dynamic>(
+final authNotifierProvider = AsyncNotifierProvider<AuthNotifier, dynamic>(
   AuthNotifier.new,
 );
+
+//register provides
+final registerProvider = Provider<RegestirServ>((ref) {
+  final dio = ref.read(dioProvider);
+  return RegestirServ(dio);
+});
+
+final registerNotiiferProvider =
+    AsyncNotifierProvider.autoDispose<RegestirNotifier, dynamic>(
+      RegestirNotifier.new,
+    );
+
+//register provides

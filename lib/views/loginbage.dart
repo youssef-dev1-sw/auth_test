@@ -1,6 +1,7 @@
 
 import 'package:auth_test/models/loginrequest.dart';
 import 'package:auth_test/providers/auth_provider.dart';
+import 'package:auth_test/views/regestirbage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -128,6 +129,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     : const Text('Login'),
               ),
             ),
+            Center(child: ElevatedButton(onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegisterPage(),));
+            }, child: Text("I dont have account")),)
           ],
         ),
       ),
