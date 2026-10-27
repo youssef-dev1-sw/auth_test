@@ -17,6 +17,6 @@ final productServProvider = Provider<ProductServ>((ref) {
 });
 
 final productNotifierProvider =
-    AsyncNotifierProvider.autoDispose<ProductNotifier, void>(
+    AsyncNotifierProvider<ProductNotifier, void>(
       ProductNotifier.new,
     );

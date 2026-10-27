@@ -1,4 +1,5 @@
 
+import 'package:auth_test/views/firstbage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:auth_test/models/product_request.dart';
@@ -59,7 +60,9 @@ class _ProductPageState extends ConsumerState<ProductPage> {
         const SnackBar(
           content: Text('Product added successfully'),
         ),
+        
       );
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Firstbage(),));
     } catch (e) {
       if (!mounted) return;
 
